@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bulubox_Fullcontact>
+            <version>0.0.2</version>
+        </Bulubox_Fullcontact>
+    </modules>
+     
+    <global>
+        <helpers>
+            <bulubox_fullcontact>
+                <class>Bulubox_Fullcontact_Helper</class>
+            </bulubox_fullcontact>
+        </helpers> 
+                    
+        <blocks>
+            <bulubox_fullcontact>
+                <class>Bulubox_Fullcontact_Block</class>
+            </bulubox_fullcontact>
+        </blocks>
+         
+        <models>
+            <bulubox_fullcontact>
+                <class>Bulubox_Fullcontact_Model</class>
+                <resourceModel>bulubox_fullcontact_mysql4</resourceModel>
+            </bulubox_fullcontact>
+             
+            <bulubox_fullcontact_mysql4>
+                <class>Bulubox_Fullcontact_Model_Mysql4</class>
+                <entities>
+                    <people>
+                        <table>bulubox_fullcontact_people</table>
+                    </people>
+                </entities>
+            </bulubox_fullcontact_mysql4>
+        </models>
+         
+        <resources>
+            <bulubox_fullcontact_setup>
+                <setup>
+                    <module>Bulubox_Fullcontact</module>
+                </setup>
+            </bulubox_fullcontact_setup>
+        </resources>
+    </global>
+    
+    <frontend>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <bulubox_fullcontact_observer>
+                        <type>singleton</type>
+                        <class>bulubox_fullcontact/observer</class>
+                        <method>purchaseComplete</method>
+                    </bulubox_fullcontact_observer>
+                </observers>
+            </sales_order_save_after>
+        </events>
+    </frontend>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bulubox_Fullcontact before="Mage_Adminhtml">Bulubox_Fullcontact_Adminhtml</Bulubox_Fullcontact>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <bulubox_fullcontact>
+                    <file>bulubox/fullcontact.xml</file>
+                </bulubox_fullcontact>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

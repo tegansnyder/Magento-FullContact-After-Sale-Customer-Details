@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <customer>
+            <children>
+                <bulubox_fullcontact_people translate="title" module="bulubox_fullcontact">
+                    <title>Full Contact</title>
+                    <action>adminhtml/people</action>
+                </bulubox_fullcontact_people>
+            </children>
+        </customer>
+    </menu>
+     
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <customer>
+                        <children>
+                            <bulubox_fullcontact_people>
+                                <title>Full Contact</title>
+                            </bulubox_fullcontact_people>
+                        </children>
+                    </customer>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

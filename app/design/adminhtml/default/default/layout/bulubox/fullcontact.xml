@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_people_index>
+        <reference name="content">
+            <block type="bulubox_fullcontact/adminhtml_people" name="bulubox_fullcontact_people" />
+        </reference>
+    </adminhtml_people_index>
+</layout>

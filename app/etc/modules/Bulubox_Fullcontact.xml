@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Bulubox_Fullcontact>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Bulubox_Fullcontact>
+    </modules>
+</config>
