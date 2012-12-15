@@ -20,9 +20,9 @@ class Bulubox_Fullcontact_Model_Observer extends Mage_Core_Model_Abstract
 		    	$customer = Mage::getModel('customer/customer')->load($customer_id);
 		    	$customer_email = $customer_data['email'];
 
-	    		include_once('/sites/magento/fullcontact/src/FullContact.php');
+	    		include_once('path/to/fullcontact-php-library-here/FullContact.php');
 	    		
-	    		$fullcontact = new FullContactAPI('4bd22ccd0ed6ffe2');
+	    		$fullcontact = new FullContactAPI('YOUR_API_KEY');
 	    		$result = $fullcontact->doLookup($customer_email);
 	    		
 	    		$status = $result['status'];
@@ -139,15 +139,6 @@ class Bulubox_Fullcontact_Model_Observer extends Mage_Core_Model_Abstract
 	    			
 	    			$html .= '</table>';
 	    			
-//	    			$mail = Mage::getModel('core/email');
-//	    			$mail->setToName('Bulu Box');
-//	    			$mail->setToEmail('tegan@bulubox.com');
-//	    			$mail->setBody($html);
-//	    			$mail->setSubject('New Customer Information');
-//	    			$mail->setFromEmail('hello@bulubox.com');
-//	    			$mail->setFromName("Bulu Box");
-//	    			$mail->setType('html');
-//	    			$mail->send();
 
 	    			$sub = Mage::getSingleton('bulubox_fullcontact/people');
 	    			$sub->setCustomerId($customer->getId());
