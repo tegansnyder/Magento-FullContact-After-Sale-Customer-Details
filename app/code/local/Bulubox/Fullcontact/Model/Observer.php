@@ -18,7 +18,7 @@ class Bulubox_Fullcontact_Model_Observer extends Mage_Core_Model_Abstract
 			if (!$exists->getOrderId()) {
 				
 		    	$customer = Mage::getModel('customer/customer')->load($customer_id);
-		    	$customer_email = $customer_data['email'];
+		    	$customer_email = $customer->getEmail();
 
 	    		include_once('path/to/fullcontact-php-library-here/FullContact.php');
 	    		
